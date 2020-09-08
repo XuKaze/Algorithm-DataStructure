@@ -21,7 +21,8 @@ def commonChars(A):
     dict = {}
     for i in a:
 '''
-# My solution
+'''
+# My solution WRONG
 A = ["bella","label","roller"]
 n = len(A)
 dict = {}
@@ -40,7 +41,16 @@ for item in dict.keys():
         k = dict[item]/n
         for i in range(int(k)):
             final_list.append(item)
-    else:
-        continue
+    elif dict[item]%n != 0 and dict[item]%n > 1:
+'''
+# cool solution
 
-final_list
+from collections import Counter
+
+it = collections.Counter(A[0])
+
+for i in range(2,len(A)):
+    num1, num2 = map(Counter, [ A[i-1], A[i]])
+    it = it & num1 & num2
+
+print(*it.elements())
