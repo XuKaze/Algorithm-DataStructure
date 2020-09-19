@@ -48,3 +48,24 @@ class Tree:
                 order.append(r.val)
                 print(r.val)
         return order
+
+
+    def dfs_preorder_recursive(self,node):
+        if node is None:
+            return
+        print(node.val)
+        dfs_preorder_recursive(node.left)
+        dfs_preorder_recursive(node.right)
+
+    def dfs_preorder(self):
+        if self.root is None
+            return
+        stack = [self.root]
+        res = []
+        while stack:
+            r = stack.pop()
+            res.append(r.val)
+            if r.right is not None:
+                stack.append(r.right)
+            if r.left is not None:
+                stack.append(r.left)
